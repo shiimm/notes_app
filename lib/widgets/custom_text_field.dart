@@ -5,13 +5,14 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key, required this.hint, this.maxLines = 1});
   final String hint;
   final int maxLines;
+
   @override
   Widget build(BuildContext context) {
     return TextField(
+      maxLines: maxLines,
       cursorColor: kPrimaryColor,
       decoration: InputDecoration(
           hintText: hint,
-          hintMaxLines: maxLines,
           border: buildBorder(),
           enabledBorder: buildBorder(),
           focusedBorder: buildBorder(kPrimaryColor)),
